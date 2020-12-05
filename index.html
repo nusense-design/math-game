@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body >
+    <div class="main">
+        <p class="problem"></p>
+        <form action="" id="myForm">
+            <input type="text" id=txt autocomplete="off">
+            <button type="submit">submit</button>
+        </form>
+        <p class="status">You need <span id="pts-req">10</span> more questions, still have <span id="mistakes">2</span> chance </p>
+        <div class="progress">
+            <div class="container">
+                <div class="box box1"></div>
+                <div class="box box2"></div>
+                <div class="box box3"></div>
+                <div class="box box4"></div>
+                <div class="box box5"></div>
+                <div class="box box6"></div>
+                <div class="box box7"></div>
+                <div class="box box8"></div>
+                <div class="box box9"></div>
+                <div class="box box10"></div>
+            </div>
+            <div class="progress-inner"></div>
+        </div>
+    </div>
+
+    <div class="overlay">
+        <div class="overlay-inner">
+            <p class="msg"></p>
+            <button class="reset-btn">Start Over</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
