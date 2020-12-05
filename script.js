@@ -6,6 +6,7 @@ const mistakes = document.getElementById("mistakes");
 const progressBar = document.querySelector(".progress-inner");
 const msg = document.querySelector(".msg");
 const reset = document.querySelector(".reset-btn");
+const overlay = document.querySelector('.overlay')
 
 let state = {
    score: 0,
@@ -55,6 +56,8 @@ form.addEventListener("submit", (e) => {
          mistakes.textContent = 2 - state.wrongAns;
          input.value = "";
          input.focus();
+         problem.classList.add('red');
+         setTimeout(()=> problem.classList.remove('red'),331)
       }
       checkLogic();
    }
@@ -64,15 +67,17 @@ function checkLogic() {
    if (state.score == 10) {
       msg.textContent = "Congrats! you won";
       document.body.classList.add("overlay-open");
+      setTimeout(()=> reset.focus(),331)
    }
    //* lose
    if (state.wrongAns == 3) {
       msg.textContent = "Sorry,You Lost";
       document.body.classList.add("overlay-open");
+      setTimeout(() => reset.focus(), 331);
    }
 }
 
-reset.addEventListener('click',resetGame)
+reset.addEventListener('click', resetGame);
 
 function resetGame() {
    document.body.classList.remove('overlay-open')

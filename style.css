@@ -1,141 +1,161 @@
-:root{
-    font-size: 20px;
+:root {
+   font-size: 20px;
 }
 
-*,*:before,*:after{
-    box-sizing: border-box;
+*,
+*:before,
+*:after {
+   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
-  margin: 0;
-  color: #333;
+   font-family: "Source Sans Pro", sans-serif;
+   margin: 0;
+   color: #333;
 }
 
 .main {
-  max-width: 800px;
-  margin: 70px auto;
+   max-width: 800px;
+   margin: 70px auto;
 }
 
-.container{
-    display: flex;
-    width: 100%;
+.container {
+   display: flex;
+   width: 100%;
 }
 
-.progress{
-    border:1px solid #c7c7c7;
-    border-right:none; 
-    position: relative;
+.progress {
+   border: 1px solid #c7c7c7;
+   border-right: none;
+   position: relative;
 }
 
-.box{
-    flex: 1;
-    height:40px;
-    border-right: 1px solid #c7c7c7;
-
+.box {
+   flex: 1;
+   height: 40px;
+   border-right: 1px solid #c7c7c7;
 }
 
-.progress-inner{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    background: rgba(156, 53, 87, 0.582);
-    transform:scaleX(0);
-    transform-origin: center left;  
-    /* transform-origin: vertical horizontal */
-    transition: transform .4s ease-out;
-    /* transition-timing-function: cubic-bezier(0.01, 0.93, 0.63, 1.05); */
-    transition-timing-function: cubic-bezier(0.71, 0.21, 0.8, 1.18);
+.progress-inner {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   width: 100%;
+   background: rgba(156, 53, 87, 0.582);
+   /* background: rgba(22, 145, 48, 0.678); */
+   transform: scaleX(0);
+   transform-origin: center left;
+   /* transform-origin: vertical horizontal */
+   transition: transform 0.4s ease-out;
+   /* transition-timing-function: cubic-bezier(0.01, 0.93, 0.63, 1.05); */
+   transition-timing-function: cubic-bezier(0.71, 0.21, 0.8, 1.18);
 }
 
 /**--- overlay--- */
 
-.overlay{
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(255,255,255,0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: all .33 ease-out;
-    transform: scale(1.2);
+.overlay {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background-color: rgba(255, 255, 255, 0.7);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   opacity: 0;
+   visibility: hidden;
+   transition: all 0.33 ease-out;
+   transform: scale(1.2);
 }
 
-body.overlay-open .overlay{
-    opacity:1;
-    visibility: visible;
-    transform: scale(1);
+body.overlay-open .overlay {
+   opacity: 1;
+   visibility: visible;
+   transform: scale(1);
 }
 
-body.overlay-open .main{
-    filter:blur(1px)
+body.overlay-open .main {
+   filter: blur(1px);
 }
 
 /* ------other styling-------*/
 
 .problem {
-  font-size: 5rem;
-  margin: 0;
-  text-align: center;
+   font-size: 5rem;
+   margin: 0;
+   text-align: center;
 }
 
 .msg {
-  font-size: 1.5rem;
-  margin-top: 0;
+   font-size: 1.5rem;
+   margin-top: 0;
 }
 
 .reset-btn {
-  font-size: 1.2rem;
-  background-color: #004094;
-  border: none;
-  color: #FFF;
-  border-radius: 7px;
-  padding: 12px 20px;
-  display: inline-block;
-  outline: none;
-  cursor: pointer;
+   font-size: 1.2rem;
+   background-color: #004094;
+   border: none;
+   color: #fff;
+   border-radius: 7px;
+   padding: 12px 20px;
+   display: inline-block;
+   outline: none;
+   cursor: pointer;
 }
 
 .reset-btn:hover {
-  background-color: #00367e;
+   background-color: #00367e;
 }
 
 .reset-btn:focus {
-  background-color: #00275a;
+   background-color: #00275a;
 }
 
 .overlay-inner {
-  text-align: center;
-  max-width: 700px;
+   text-align: center;
+   max-width: 700px;
 }
 
 #myForm {
-  display: flex;
-  justify-content: center;
-  margin-left: 20px;
-  height: 1.4em;
+   display: flex;
+   justify-content: center;
+   margin-left: 20px;
+   height: 1.4em;
 }
 
-#myForm button{
-    padding: 0 5px;
-    margin-left: 5px;
-    font-size: 0.8em;
-    text-transform : capitalize;
+#myForm button {
+   padding: 0 5px;
+   margin-left: 5px;
+   font-size: 0.8em;
+   text-transform: capitalize;
 }
 
-#myForm input{
-    /* padding: 5px; */
-    font-size: 0.8em;
-    text-align: center;
+#myForm input {
+   /* padding: 5px; */
+   font-size: 0.8em;
+   text-align: center;
 }
 
 .status {
-  text-align: center;
-  font-size: .85rem;
+   text-align: center;
+   font-size: 0.85rem;
+}
+
+/* ------[ animation ]------------ */
+
+@keyframes error{
+  50%{
+    color :#F24B59;
+    transform:scale(1.2)
+  }
+  100%{
+    color:#333;
+    transform: scale(1);
+  }
+}
+
+.red {
+  animation: .33s error;
+   color: #f24b59;
 }
